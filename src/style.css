@@ -56,8 +56,34 @@ body {
     top: 120px;
     transform: translateX(-50%);
 }
+.nose:hover {
+    animation: wave .3s linear infinite;
+}
+@keyframes wave {
+    0% { transform: translateX(-50%) rotate(0); }
+    25% { transform: translateX(-50%) rotate(5deg); }
+    50% { transform: translateX(-50%) rotate(0); }
+    75% { transform: translateX(-50%) rotate(-5deg); }
+    100% { transform: translateX(-50%) rotate(0); }
+}
 
-.face {}
+.face {
+    width: 68px;
+    height: 68px;
+    background: #FC0D1C;
+    border: 2px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 160px;
+}
+.face-left {
+    right: 50%;
+    margin-right: 110px;
+}
+.face-right {
+    left: 50%;
+    margin-left: 110px;
+}
 
 .mouth {
     width: 200px;

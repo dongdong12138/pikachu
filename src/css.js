@@ -1,38 +1,5 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-*::before, *::after { box-sizing: border-box; }
-html, body {overflow: hidden;}
-
-body {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-}
-
-pre {
-    width: 100%;
-    height: 50%;
-    border: 1px solid red;
-    padding: 8px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    font-size: 18px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
-
-.button-group {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    right: 10px;
-    top: 10px;
-}
-.button-group > button {
-    padding: 4px 8px;
-    margin-bottom: 6px;
-}
-
-/* 
+const string = `
+/* 先画个皮肤 */
 .skin {
     width: 100%;
     height: 50%;
@@ -42,6 +9,7 @@ pre {
     bottom: 0;
 }
 
+/* 再画眼睛 */
 .eye {
     width: 50px;
     height: 50px;
@@ -72,6 +40,7 @@ pre {
     margin-left: 90px;
 }
 
+/* 再画鼻子 */
 .nose {
     border-style: solid;
     border-width: 12px;
@@ -93,6 +62,7 @@ pre {
     100% { transform: translateX(-50%) rotate(0); }
 }
 
+/* 再画脸蛋 */
 .face {
     width: 68px;
     height: 68px;
@@ -111,6 +81,7 @@ pre {
     margin-left: 110px;
 }
 
+/* 再画嘴唇 */
 .mouth {
     width: 200px;
     height: 110px;
@@ -163,4 +134,6 @@ pre {
     left: 50%;
     bottom: -20px;
     transform: translateX(-50%);
-} */
+}
+`
+export default string

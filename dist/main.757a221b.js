@@ -103,25 +103,79 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"main.js":[function(require,module,exports) {
+})({"css.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var string = "\n/* \u5148\u753B\u4E2A\u76AE\u80A4 */\n.skin {\n    width: 100%;\n    height: 50%;\n    background: #FEE433;\n    position: absolute;\n    left: 0;\n    bottom: 0;\n}\n\n/* \u518D\u753B\u773C\u775B */\n.eye {\n    width: 50px;\n    height: 50px;\n    background: #2E2E2E;\n    border: 2px solid #000;\n    border-radius: 50%;\n    position: absolute;\n    top: 80px;\n}\n.eye::after {\n    content: \"\";\n    display: block;\n    width: 24px;\n    height: 24px;\n    background: #fff;\n    border: 2px solid #000;\n    border-radius: 50%;\n    position: absolute;\n    left: 6px;\n    top: -1px;\n}\n.eye-left {\n    right: 50%;\n    margin-right: 90px;\n}\n.eye-right {\n    left: 50%;\n    margin-left: 90px;\n}\n\n/* \u518D\u753B\u9F3B\u5B50 */\n.nose {\n    border-style: solid;\n    border-width: 12px;\n    border-color: #000 transparent transparent transparent;\n    border-radius: 11px;\n    position: absolute;\n    left: 50%;\n    top: 120px;\n    transform: translateX(-50%);\n}\n.nose:hover {\n    animation: wave .3s linear infinite;\n}\n@keyframes wave {\n    0% { transform: translateX(-50%) rotate(0); }\n    25% { transform: translateX(-50%) rotate(5deg); }\n    50% { transform: translateX(-50%) rotate(0); }\n    75% { transform: translateX(-50%) rotate(-5deg); }\n    100% { transform: translateX(-50%) rotate(0); }\n}\n\n/* \u518D\u753B\u8138\u86CB */\n.face {\n    width: 68px;\n    height: 68px;\n    background: #FC0D1C;\n    border: 2px solid #000;\n    border-radius: 50%;\n    position: absolute;\n    top: 160px;\n}\n.face-left {\n    right: 50%;\n    margin-right: 110px;\n}\n.face-right {\n    left: 50%;\n    margin-left: 110px;\n}\n\n/* \u518D\u753B\u5634\u5507 */\n.mouth {\n    width: 200px;\n    height: 110px;\n    position: absolute;\n    left: 50%;\n    top: 150px;\n    transform: translateX(-50%);\n    overflow: hidden;\n}\n.mouth > .lip-up {\n    width: 80px;\n    height: 25px;\n    background: #FDE348;\n    border: 2px solid black;\n    border-top: none;\n    position: absolute;\n    top: -8px;\n}\n.mouth > .lip-up:nth-of-type(2) {\n    border-right: none;\n    border-bottom-left-radius: 40px 25px;\n    transform: rotate(-20deg);\n    left: 18px;\n}\n.mouth > .lip-up:nth-of-type(3) {\n    border-left: none;\n    border-bottom-right-radius: 40px 25px;\n    transform: rotate(20deg);\n    right: 18px;\n}\n.mouth > .lip-down {\n    width: 200px;\n    height: 3500px;\n    border: 2px solid #000;\n    border-radius: 200px/2000px;\n    background: #990513;\n    position: absolute;\n    left: 0;\n    bottom: 0;\n    overflow: hidden;\n}\n.mouth > .lip-down::after {\n    content: \"\";\n    display: block;\n    width: 100px;\n    height: 100px;\n    background: #FC4A62;\n    border-radius: 50%;\n    position: absolute;\n    left: 50%;\n    bottom: -20px;\n    transform: translateX(-50%);\n}\n";
+exports.default = string;
+},{}],"main.js":[function(require,module,exports) {
+'use strict';
+
+var _css = require('./css');
+
+var _css2 = _interopRequireDefault(_css);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 var pre = document.querySelector('pre');
 var style = document.querySelector('style');
+var btnGroup = document.querySelector('.button-group');
 
-var string = '\n/* \u5148\u753B\u4E2A\u76AE\u80A4 */\n.skin {\n    width: 100%;\n    height: 50%;\n    background: #FEE433;\n    position: absolute;\n    left: 0;\n    bottom: 0;\n}\n\n/* \u518D\u753B\u773C\u775B */\n.eye {\n    width: 50px;\n    height: 50px;\n    background: #2E2E2E;\n    border: 2px solid #000;\n    border-radius: 50%;\n    position: absolute;\n    top: 80px;\n}\n.eye::after {\n    content: "";\n    display: block;\n    width: 24px;\n    height: 24px;\n    background: #fff;\n    border: 2px solid #000;\n    border-radius: 50%;\n    position: absolute;\n    left: 6px;\n    top: -1px;\n}\n.eye-left {\n    right: 50%;\n    margin-right: 90px;\n}\n.eye-right {\n    left: 50%;\n    margin-left: 90px;\n}\n\n/* \u518D\u753B\u9F3B\u5B50 */\n.nose {\n    border-style: solid;\n    border-width: 12px;\n    border-color: #000 transparent transparent transparent;\n    border-radius: 11px;\n    position: absolute;\n    left: 50%;\n    top: 120px;\n    transform: translateX(-50%);\n}\n.nose:hover {\n    animation: wave .3s linear infinite;\n}\n@keyframes wave {\n    0% { transform: translateX(-50%) rotate(0); }\n    25% { transform: translateX(-50%) rotate(5deg); }\n    50% { transform: translateX(-50%) rotate(0); }\n    75% { transform: translateX(-50%) rotate(-5deg); }\n    100% { transform: translateX(-50%) rotate(0); }\n}\n\n/* \u518D\u753B\u8138\u86CB */\n.face {\n    width: 68px;\n    height: 68px;\n    background: #FC0D1C;\n    border: 2px solid #000;\n    border-radius: 50%;\n    position: absolute;\n    top: 160px;\n}\n.face-left {\n    right: 50%;\n    margin-right: 110px;\n}\n.face-right {\n    left: 50%;\n    margin-left: 110px;\n}\n\n/* \u518D\u753B\u5634\u5507 */\n.mouth {\n    width: 200px;\n    height: 110px;\n    position: absolute;\n    left: 50%;\n    top: 150px;\n    transform: translateX(-50%);\n    overflow: hidden;\n}\n.mouth > .lip-up {\n    width: 80px;\n    height: 25px;\n    background: #FDE348;\n    border: 2px solid black;\n    border-top: none;\n    position: absolute;\n    top: -8px;\n}\n.mouth > .lip-up:nth-of-type(2) {\n    border-right: none;\n    border-bottom-left-radius: 40px 25px;\n    transform: rotate(-20deg);\n    left: 18px;\n}\n.mouth > .lip-up:nth-of-type(3) {\n    border-left: none;\n    border-bottom-right-radius: 40px 25px;\n    transform: rotate(20deg);\n    right: 18px;\n}\n.mouth > .lip-down {\n    width: 200px;\n    height: 3500px;\n    border: 2px solid #000;\n    border-radius: 200px/2000px;\n    background: #990513;\n    position: absolute;\n    left: 0;\n    bottom: 0;\n    overflow: hidden;\n}\n.mouth > .lip-down::after {\n    content: "";\n    display: block;\n    width: 100px;\n    height: 100px;\n    background: #FC4A62;\n    border-radius: 50%;\n    position: absolute;\n    left: 50%;\n    bottom: -20px;\n    transform: translateX(-50%);\n}\n';
 var n = 0;
+var speed = 50;
+var timer = void 0;
 
-var timer = setInterval(function () {
-    if (n >= string.length) {
-        clearInterval(timer);
-        return;
+var player = {
+    init: function init() {
+        var _this = this;
+
+        timer = setInterval(function () {
+            _this.run();
+        }, speed);
+    },
+    run: function run() {
+        if (n >= _css2.default.length) {
+            clearInterval(timer);
+            return;
+        }
+        n += 1;
+        pre.innerText = _css2.default.substr(0, n);
+        style.innerHTML = _css2.default.substr(0, n);
+
+        pre.scrollTop = pre.scrollHeight;
+    },
+    play: function play() {
+        return setInterval(this.run, speed);
+    },
+    slow: function slow() {
+        speed = 100;
+        timer = this.play();
+    },
+    medium: function medium() {
+        speed = 50;
+        timer = this.play();
+    },
+    fast: function fast() {
+        speed = 0;
+        timer = this.play();
     }
-    n += 1;
-    pre.innerText = string.substr(0, n);
-    style.innerHTML = string.substr(0, n);
+};
 
-    pre.scrollTop = pre.scrollHeight;
-}, 0);
-},{}],"C:\\Users\\Administrator\\AppData\\Roaming\\npm\\node_modules\\parcel\\src\\builtins\\hmr-runtime.js":[function(require,module,exports) {
+player.init();
+
+btnGroup.onclick = function (e) {
+    var id = e.target.id;
+
+    clearInterval(timer);
+    timer = id === 'btnPlay' && player.play();
+    id === 'btnSlow' && player.slow();
+    id === 'btnMedium' && player.medium();
+    id === 'btnFast' && player.fast();
+};
+},{"./css":"css.js"}],"C:\\Users\\Administrator\\AppData\\Roaming\\npm\\node_modules\\parcel\\src\\builtins\\hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 

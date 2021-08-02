@@ -20,6 +20,18 @@ pre {
     word-wrap: break-word;
 }
 
+.button-group {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.button-group > button {
+    padding: 4px 8px;
+    margin-bottom: 6px;
+}
+
 /* 
 .skin {
     width: 100%;
